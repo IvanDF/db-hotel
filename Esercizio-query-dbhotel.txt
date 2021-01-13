@@ -43,13 +43,19 @@ ESERCIZIO DB-HOTEL QUERIES
   FROM `pagamenti`
 
 
-
 - Seleziona gli ospiti riconosciuti con patente e nati nel 1975
 
   SELECT `name`, `lastname`, `date_of_birth`, `document_type`
   FROM `ospiti`
   WHERE `document_type` = 'Driver License'
   AND `date_of_birth` BETWEEN '1975-01-01' AND '1975-12-31';
+
+  ----------------------
+
+  SELECT `name`, `lastname`, `date_of_birth`, `document_type`
+  FROM `ospiti`
+  WHERE `document_type` = 'driver license'
+  AND YEAR(`date_of_birth`) = '1975';
 
 
 - Quanti posti letto ha l’hotel in totale?
